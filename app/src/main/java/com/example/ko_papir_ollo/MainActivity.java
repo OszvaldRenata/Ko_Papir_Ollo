@@ -17,14 +17,17 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView eredmeny;
     private ImageView sajatvalasztas, gepvalasztas;
+    private  ImageView heart1, heart2, heart3, heart4, heart5, heart6;
     private Button ko, papir, ollo;
     private AlertDialog.Builder builder;
 
 
     private int ertek;
     private String gepvalertek;
-    private int jatekosnyer, gepnyer;
+    private int jatekosnyer, gepnyer, dontetlen;
     private String sajatvalaszertek;
+
+
 
 
     private void init()
@@ -32,6 +35,12 @@ public class MainActivity extends AppCompatActivity {
         eredmeny = findViewById(R.id.eredmenyId);
         sajatvalasztas = findViewById(R.id.sajatvalasztasId);
         gepvalasztas = findViewById(R.id.gepvalasztasId);
+        heart1 = findViewById(R.id.heart1Id);
+        heart2 = findViewById(R.id.heart2Id);
+        heart3 = findViewById(R.id.heart3Id);
+        heart4 = findViewById(R.id.heart4Id);
+        heart5 = findViewById(R.id.heart5Id);
+        heart6 = findViewById(R.id.heart6Id);
         ko = findViewById(R.id.buttonKo);
         papir = findViewById(R.id.buttonPapir);
         ollo = findViewById(R.id.buttonOllo);
@@ -39,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         gepvalertek = "Kő";
         jatekosnyer = 0;
         gepnyer = 0;
+        dontetlen = 0;
         sajatvalaszertek = "Kő";
         builder = new AlertDialog.Builder(MainActivity.this);
         builder.setCancelable(false).setMessage("Szeretnél új játékot kezdeni?").setPositiveButton("Igen", new DialogInterface.OnClickListener() {
@@ -125,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void Eredmeny()
     {
-        eredmeny.setText("Gép: " + gepnyer + " - Játékos: " + jatekosnyer );
+        eredmeny.setText("Gép: " + gepnyer + " - Játékos: " + jatekosnyer + " - Döntetlen: " + dontetlen );
     }
 
     private void Feltetel()
@@ -134,31 +144,54 @@ public class MainActivity extends AppCompatActivity {
         {
             Toast.makeText(MainActivity.this, "A gép nyert!", Toast.LENGTH_SHORT).show();
             gepnyer++;
+            heart4.setBackgroundResource(R.drawable.heart1);
         }
         if (sajatvalaszertek == "Kő" && gepvalertek == "Olló"  )
         {
             Toast.makeText(MainActivity.this, "Te nyertél!", Toast.LENGTH_SHORT).show();
             jatekosnyer++;
+            heart3.setImageResource(R.drawable.heart1);
         }
         if (sajatvalaszertek == "Papír" && gepvalertek == "Kő"  )
         {
             Toast.makeText(MainActivity.this, "Te nyertél!", Toast.LENGTH_SHORT).show();
             jatekosnyer++;
+            heart2.setImageResource(R.drawable.heart1);
         }
         if (sajatvalaszertek == "Olló" && gepvalertek == "Kő"  )
         {
             Toast.makeText(MainActivity.this, "A gép nyert!", Toast.LENGTH_SHORT).show();
             gepnyer++;
+            heart1.setImageResource(R.drawable.heart1);
         }
         if (sajatvalaszertek == "Olló" && gepvalertek == "Papír"  )
         {
             Toast.makeText(MainActivity.this, "Te nyertél!", Toast.LENGTH_SHORT).show();
             jatekosnyer++;
+            heart5.setImageResource(R.drawable.heart1);
         }
         if (sajatvalaszertek == "Papír" && gepvalertek == "Olló"  )
         {
             Toast.makeText(MainActivity.this, "A gép nyert!", Toast.LENGTH_SHORT).show();
             gepnyer++;
+            heart6.setImageResource(R.drawable.heart1);
+        }
+
+
+        if (sajatvalaszertek == "Kő" && gepvalertek == "Kő")
+        {
+            Toast.makeText(MainActivity.this, "Döntetlen!", Toast.LENGTH_SHORT).show();
+            dontetlen++;
+        }
+        if (sajatvalaszertek == "Papír" && gepvalertek == "Papír")
+        {
+            Toast.makeText(MainActivity.this, "Döntetlen!", Toast.LENGTH_SHORT).show();
+            dontetlen++;
+        }
+        if (sajatvalaszertek == "Olló" && gepvalertek == "Olló")
+        {
+            Toast.makeText(MainActivity.this, "Döntetlen!", Toast.LENGTH_SHORT).show();
+            dontetlen++;
         }
 
         Eredmeny();

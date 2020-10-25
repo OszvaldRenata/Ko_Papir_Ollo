@@ -6,11 +6,71 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+
 <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="30sp"
+        android:layout_height="30sp"
+        android:id="@+id/heart1Id"
+        android:background="@drawable/heart2"/>
+
+    <ImageView
+        android:layout_width="30sp"
+        android:layout_height="30sp"
+        android:id="@+id/heart2Id"
+        android:background="@drawable/heart2"/>
+
+    <ImageView
+        android:layout_width="30sp"
+        android:layout_height="30sp"
+        android:id="@+id/heart3Id"
+        android:background="@drawable/heart2"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_marginRight="20sp"
+        android:text="Gép"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:layout_marginLeft="20sp"
+            android:text="Játékos"/>
+
+        <ImageView
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:id="@+id/heart4Id"
+            android:background="@drawable/heart2"/>
+
+        <ImageView
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:id="@+id/heart5Id"
+            android:background="@drawable/heart2"/>
+
+        <ImageView
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:id="@+id/heart6Id"
+            android:background="@drawable/heart2"/>
+
+
+    </LinearLayout>
 
 <ImageView
         android:layout_width="100sp"
@@ -46,7 +106,7 @@
       android:layout_marginTop="30sp"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-      android:text="Gép: 0 Játékos: 0"
+      android:text="Gép: 0 - Játékos: 0 - Döntetlen: 0"
       android:id="@+id/eredmenyId"
      android:textSize="23sp"
       android:layout_marginBottom="40sp"/>
@@ -59,24 +119,24 @@
 
     <Button
         android:layout_width="100sp"
-        android:layout_height="40sp"
-        android:text="Kő"
+        android:layout_height="100sp"
         android:textSize="20sp"
-        android:id="@+id/buttonKo"/>
+        android:id="@+id/buttonKo"
+        android:background="@drawable/rock"/>
 
     <Button
         android:layout_width="100sp"
-        android:layout_height="40sp"
-        android:text="Papír"
+        android:layout_height="100sp"
         android:textSize="20sp"
-        android:id="@+id/buttonPapir"/>
+        android:id="@+id/buttonPapir"
+        android:background="@drawable/paper"/>
 
     <Button
         android:layout_width="100sp"
-        android:layout_height="40sp"
-        android:text="Olló"
+        android:layout_height="100sp"
         android:textSize="20sp"
-        android:id="@+id/buttonOllo"/>
+        android:id="@+id/buttonOllo"
+        android:background="@drawable/scissors"/>
 
 
 </LinearLayout>
